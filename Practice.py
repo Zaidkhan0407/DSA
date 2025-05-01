@@ -13,7 +13,7 @@ def sumSquare(n):
     return (n**2+sumSquare(n-1))
 print(sumSquare(2))
 
-
+### sum of odd squares
 def sum_odd_squares(n):
     if n <= 0:
         return 0  # 🛑 Base case: ends the chain here
