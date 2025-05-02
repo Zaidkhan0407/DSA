@@ -49,4 +49,8 @@ def computesum(arr):
 arr=[]
 print(computesum(arr))
 		
-	
+def countk(s,k):
+    if k<=0:
+        return ""
+    return s+countk(s,k-1)
+print(countk("abc",3))	
