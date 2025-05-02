@@ -29,3 +29,15 @@ def palindrome(st):
 	if st[0]!=st[-1]:
 		return False
 	return palindrome(st[1:-1])
+
+def prefixcheck(s,prefix):
+	if len(prefix)==0:
+		return True
+	if len(s)==0:
+	    return False
+	if s[0]!=prefix[0]:
+		return False
+	return prefixcheck(s[1:len(prefix)],prefix[1:])
+s=""
+prefix="a"
+print(prefixcheck(s,prefix))
