@@ -22,3 +22,10 @@ def sum_odd_squares(n):
         return sum_odd_squares(n - 1)  # Skips even, recurses
     
     return n * n + sum_odd_squares(n - 2)  # 💥 Actual logic for odd
+
+def palindrome(st):
+	if len(st)<=1:
+		return True
+	if st[0]!=st[-1]:
+		return False
+	return palindrome(st[1:-1])
