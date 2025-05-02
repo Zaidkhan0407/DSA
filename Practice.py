@@ -37,7 +37,7 @@ def prefixcheck(s,prefix):
 	    return False
 	if s[0]!=prefix[0]:
 		return False
-	return prefixcheck(s[1:len(prefix)],prefix[1:])
+	return prefixcheck(s[1:],prefix[1:])
 s=""
 prefix="a"
 print(prefixcheck(s,prefix))
