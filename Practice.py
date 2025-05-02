@@ -41,3 +41,12 @@ def prefixcheck(s,prefix):
 s=""
 prefix="a"
 print(prefixcheck(s,prefix))
+
+def computesum(arr):
+	if len(arr)<=0:
+		return 0
+	return arr[0]+computesum(arr[1:])
+arr=[]
+print(computesum(arr))
+		
+	
