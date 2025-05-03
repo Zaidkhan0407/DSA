@@ -53,4 +53,17 @@ def countk(s,k):
     if k<=0:
         return ""
     return s+countk(s,k-1)
-print(countk("abc",3))	
+print(countk("abc",3))
+
+
+def RSC(s,sub):
+    if len(s)<=0 and len(sub)<=0:
+        return True
+    if len(s)<=0:
+        return False
+    if s[0]!=sub[0]:
+        return RSC(s[1:],sub)
+    return RSC(s[1:],sub[1:])
+s="axc"
+sub="ahbg"
+print(RSC(s,sub))	
