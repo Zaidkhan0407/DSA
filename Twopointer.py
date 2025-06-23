@@ -28,13 +28,20 @@ print(UniqueSorting(a))
 def Squareofarr(a):
     left=0
     right=len(a)-1
-    while left<right:
+    temp=a[:]
+    n=len(a)
+    pos=n-1
+    while left<=right:
         if abs(a[left])<abs(a[right]):
-            a[right]=a[right]**2
+            temp[pos]=a[right]**2
             right=right-1
+            pos=pos-1
         else:
-            a[left],a[right]=a[right],a[left]
-    return a
+            temp[pos]=a[left]**2
+            left=left+1
+            pos=pos-1
+    
+    return temp
 a=[-4,-2,0,3,10]
 print(Squareofarr(a))
             
