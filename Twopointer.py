@@ -11,3 +11,16 @@ def TwoSum(a,tg):
             right=right-1
 a=[1,2,3,4,5]
 print(TwoSum(a,6))
+
+def UniqueSorting(a):
+    left=0
+    right=1
+    while right<len(a):
+        if a[left]==a[right]:
+            a.pop(right)
+        else:
+            left=left+1
+            right=right+1
+    return len(a)
+a=[1,1,2]
+print(UniqueSorting(a))
