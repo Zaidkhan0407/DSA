@@ -147,4 +147,28 @@ class Solution(object):
                 j+=1
         return nums
         
-                
+class Solution(object):
+    def findUnsortedSubarray(self, nums):
+        if len(nums)<2:
+            return 0
+        start=0
+        n=len(nums)
+        end=n-1
+        for i in range(n-1):
+            if nums[i]>nums[i+1]:
+                start=i
+                break
+        else:
+                return 0
+        for i in range(n-1,0,-1):
+            if nums[i]<nums[i-1]:
+                end=i
+                break
+        max_val=max(nums[start:end+1])
+        min_val=min(nums[start:end+1])
+        while start>0 and nums[start-1]>min_val:
+            start-=1
+        while end<n-1 and nums[end+1]<max_val:
+            end+=1
+        return end-start+1
+#We did good tho the problem was the last step where while loop extends the sub array by taking min and max value, Good Job we'll do it later
