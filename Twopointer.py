@@ -172,3 +172,20 @@ class Solution(object):
             end+=1
         return end-start+1
 #We did good tho the problem was the last step where while loop extends the sub array by taking min and max value, Good Job we'll do it later
+def validpalindrome(S):
+    def ispalindrome(S,left,right):
+        while left<right:
+            if S[left]!=S[right]:
+                return False
+            left+=1
+            right-=1
+        return True
+    left,right=0,len(S)-1
+    while left<right:
+        if S[left]!=S[right]:
+            return ispalindrome(S,left+1,right) or ispalindrome(S,left,right-1)
+        left+=1
+        right-=1
+    return True
+S="abcc"
+print(validpalindrome(S))
